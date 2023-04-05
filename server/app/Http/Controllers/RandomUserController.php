@@ -38,5 +38,10 @@ class RandomUserController extends Controller
             $itemstoshow = array_slice($items , $offset , $perPage);
             return new LengthAwarePaginator($itemstoshow ,$total ,$perPage);
         }
-}
+
+
+            function show($id){
+               dd($id);
+            }
+        }
 
