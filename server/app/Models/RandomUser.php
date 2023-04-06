@@ -33,6 +33,13 @@ class RandomUser extends Model
                 'phone' => $result['phone'],
                 'birthdate' => Carbon::parse($user['dob']['date'])->format('Y-m-d'),
             ]);
-        }
+        }  
     }
+
+    public function getUsers(){
+        $users = RandomUser::all();
+        return $users;
+    }
+
+
 }

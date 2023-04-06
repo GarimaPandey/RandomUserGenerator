@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/user', [RandomUserController::class,'index']);
+Route::get('/view/{id}', [RandomUserController::class,'show']);
+
