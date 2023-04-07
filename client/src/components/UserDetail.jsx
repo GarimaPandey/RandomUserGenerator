@@ -45,12 +45,14 @@ export default function UserDetail() {
   console.log(`${days} days remaining until the next birthday`);
 
   return (
-    <div className="container">
+    <div className="container" >
       <div className="card my-4">
         <div className="card-header">
-          <h2 className="card-title">User Detail</h2>
+          <h2 className="card-title" style={{background: "#FFFFFF"}}><b>User Detail</b></h2>
         </div>
-        <div className="card-body">
+        <div className="card-body"style={{
+        background:  "linear-gradient(to bottom, #6366f1, #6b46c1)"
+      }}>
           <div className="row">
             <div className="col-md-6">
               <p><strong>First Name:</strong> {firstName} </p>

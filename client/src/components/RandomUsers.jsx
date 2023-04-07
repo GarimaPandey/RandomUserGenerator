@@ -48,22 +48,23 @@ useEffect(() => {
 
       
     return <div>
-          
+         <h1 className="d-flex justify-content-center"><strong><u>User List</u></strong></h1>
+
         {!paginatedUsers ? ("No Data found"):(
             <div className="container">
            <div className="row"> 
            <div className="col-md-8">
             <input type="text"
-            placeholder="Search.."
+            placeholder="Search User.." 
             className="form-control"
-            style={{marginTop: 50, marginBottom:20, width:"40%" }}
+            style={{ marginBottom:20, width:"40%" }}
             onChange={(e)=>{
                 setsearchTerm(e.target.value);
             }}
-            />
+            />         
             </div>
         </div>
-            <table className="table table-bordered">
+            <table className="table table-bordered"  >
                 <thead>
                     <tr>
                         <th>id</th>
