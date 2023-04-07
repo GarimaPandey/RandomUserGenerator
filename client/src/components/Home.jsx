@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 
 export default function Home() {
   return (
-    <Container
+    <div
       className="d-flex justify-content-center align-items-center"
       style={{
         height: "100vh",
@@ -19,6 +19,6 @@ export default function Home() {
           View Random Users Here!
         </Link>
       </div>
-    </Container>
+    </div>
   );
 }

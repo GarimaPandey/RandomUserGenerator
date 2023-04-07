@@ -3,6 +3,8 @@ import axios from "axios";
 import _, { initial } from "lodash";
 import UserDetail from "./UserDetail";
 import {  Link, BrowserRouter ,Switch, Route } from "react-router-dom";
+import { Table } from "react-bootstrap";
+
 
 
 
@@ -47,24 +49,50 @@ useEffect(() => {
     }
 
       
-    return <div>
-         <h1 className="d-flex justify-content-center"><strong><u>User List</u></strong></h1>
-
+    return <div style ={{ background: "linear-gradient(to bottom, #2c3e50, #9b59b6)" }}>
         {!paginatedUsers ? ("No Data found"):(
             <div className="container">
            <div className="row"> 
-           <div className="col-md-8">
+           <div className="col-md-6">
             <input type="text"
             placeholder="Search User.." 
             className="form-control"
-            style={{ marginBottom:20, width:"40%" }}
+            style={{ width:"40%", }}
             onChange={(e)=>{
                 setsearchTerm(e.target.value);
             }}
             />         
             </div>
+            <div className="col-md-6">
+      <nav className="d-flex justify-content-center">
+        <div style={{ marginBottom: 20 }}>
+          <p>
+            <h8 style={{color:"#FFFFFF"}}>
+              <b>Recently Viewed:  </b>
+            </h8>
+            <Link to="/view">
+              <button
+                className="btn btn-primary"
+                onClick={() =>
+                  setLocalStorage(
+                    window.localStorage.getItem("id"),
+                    window.localStorage.getItem("first_name"),
+                    window.localStorage.getItem("last_name"),
+                    window.localStorage.getItem("email"),
+                    window.localStorage.getItem("phone"),
+                    window.localStorage.getItem("birthdate")
+                  )
+                }
+              >
+                {window.localStorage.getItem("first_name")}
+              </button>
+            </Link>
+          </p>
         </div>
-            <table className="table table-bordered"  >
+      </nav>
+    </div>
+        </div>
+        <Table striped bordered hover style={{ marginTop:-30,backgroundColor: "#f5f5f5" }}>
                 <thead>
                     <tr>
                         <th>id</th>
@@ -101,44 +129,31 @@ useEffect(() => {
 }
                 </tbody>
           
-            </table>
+            </Table>
     
     </div>
         )}
 
         
-        <nav className="d-flex justify-content-center">
-        <div className="col-md-6"
-            style={{ marginBottom:20}}>
-           <p><h8><b>Recently Viewed : </b></h8><Link to="/view">
-            <button className="btn btn-info" 
-            onClick={()=>setLocalStorage(window.localStorage.getItem('id'),
-            window.localStorage.getItem('first_name'),
-            window.localStorage.getItem('last_name'),
-            window.localStorage.getItem('email'),
-            window.localStorage.getItem('phone'),
-            window.localStorage.getItem('birthdate'))}>
-               {window.localStorage.getItem('first_name')}
-            </button>
-            </Link></p> 
-            </div>
-            <ul className="pagination">
-            {
-                pages.map((page) =>(
-                    <li className={
-                        page === currentPage?"page-item active" : "page-item"
-                    }
-                    >
-                        <p className="page-link"
-                        onClick={()=>pagination(page)}>
-                        {page}
-                        </p>
-                        
-                    </li>
-                ))
-            }
-            </ul>
-        </nav>
+<div className="container">
+  <div className="row">
+    
+    <div className="col-md-6">
+      <ul className="pagination justify-content-end">
+        {pages.map((page) => (
+          <li
+            className={page === currentPage ? "page-item active" : "page-item"}
+          >
+            <p className="page-link" onClick={() => pagination(page)}>
+              {page}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>
+
         </div>;
 }
  

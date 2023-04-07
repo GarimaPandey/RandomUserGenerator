@@ -45,22 +45,25 @@ export default function UserDetail() {
   console.log(`${days} days remaining until the next birthday`);
 
   return (
-    <div className="container" >
-      <div className="card my-4">
-        <div className="card-header">
-          <h2 className="card-title" style={{background: "#FFFFFF"}}><b>User Detail</b></h2>
-        </div>
-        <div className="card-body"style={{
-        background:  "linear-gradient(to bottom, #6366f1, #6b46c1)"
-      }}>
-          <div className="row">
-            <div className="col-md-6">
-              <p><strong>First Name:</strong> {firstName} </p>
-              <p><strong>Last Name:</strong> {lastName} </p>
-              <p><strong>Email:</strong> {email} </p>
-              <p><strong>Phone:</strong> {phone}</p>
-              <p><strong>Date of Birth:</strong> {formattedDate} </p>
-              <p><strong>Time remaining until {firstName}'s birthday:</strong> {days} Days!!! </p>
+    <div className="d-flex align-items-center justify-content-center vh-100">
+      <div className="container">
+        <div className="card my-4">
+          <div className="card-header text-center" style={{background: "#FFFFFF"}}>
+            <h2 className="card-title"><b>User Detail</b></h2>
+          </div>
+          <div className="card-body" style={{
+background: "linear-gradient(to bottom, #2c3e50, #9b59b6)",
+color: "#000"
+          }}>
+            <div className="row">
+              <div className="col-md-6">
+                <p><strong>First Name:</strong> {firstName} </p>
+                <p><strong>Last Name:</strong> {lastName} </p>
+                <p><strong>Email:</strong> {email} </p>
+                <p><strong>Phone:</strong> {phone}</p>
+                <p><strong>Date of Birth:</strong> {formattedDate} </p>
+                <p><strong>Time remaining until {firstName}'s birthday:</strong> {days} Days!!! </p>
+              </div>
             </div>
           </div>
         </div>
