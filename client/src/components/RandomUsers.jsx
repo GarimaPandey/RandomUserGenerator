@@ -24,7 +24,7 @@ useEffect(() => {
     },[]);
 
    
-
+ 
     const setLocalStorage = (id,first_name,last_name,email,phone,birthdate) => {
         localStorage.setItem("id" , id);
         localStorage.setItem("first_name" , first_name);
@@ -51,14 +51,18 @@ useEffect(() => {
           
         {!paginatedUsers ? ("No Data found"):(
             <div className="container">
+           <div className="row"> 
+           <div className="col-md-8">
             <input type="text"
             placeholder="Search.."
             className="form-control"
-            style={{marginTop: 50, marginBottom:20,width:"40%" }}
+            style={{marginTop: 50, marginBottom:20, width:"40%" }}
             onChange={(e)=>{
                 setsearchTerm(e.target.value);
             }}
             />
+            </div>
+        </div>
             <table className="table table-bordered">
                 <thead>
                     <tr>
@@ -95,14 +99,28 @@ useEffect(() => {
                    ))
 }
                 </tbody>
+          
             </table>
-            <h4>Recently Viewed User:</h4>
-            
-            </div>
+    
+    </div>
         )}
 
         
         <nav className="d-flex justify-content-center">
+        <div className="col-md-6"
+            style={{ marginBottom:20}}>
+           <p><h8><b>Recently Viewed : </b></h8><Link to="/view">
+            <button className="btn btn-info" 
+            onClick={()=>setLocalStorage(window.localStorage.getItem('id'),
+            window.localStorage.getItem('first_name'),
+            window.localStorage.getItem('last_name'),
+            window.localStorage.getItem('email'),
+            window.localStorage.getItem('phone'),
+            window.localStorage.getItem('birthdate'))}>
+               {window.localStorage.getItem('first_name')}
+            </button>
+            </Link></p> 
+            </div>
             <ul className="pagination">
             {
                 pages.map((page) =>(

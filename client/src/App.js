@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import RandomUser from './components/RandomUsers';
 import {BrowserRouter, Switch, Route, Routes } from 'react-router-dom';
