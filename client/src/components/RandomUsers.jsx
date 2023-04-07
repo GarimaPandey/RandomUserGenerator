@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import _, { initial } from "lodash";
+import UserDetail from "./UserDetail";
+import {  Link, BrowserRouter ,Switch, Route } from "react-router-dom";
+
+
+
 
 const pageSize = 10;
 const RandomUser = () => {
 const [users,setUsers] = useState();
-const [searchTerm, setsearchTerm] = useState("")
+const [searchTerm, setsearchTerm] = useState("");
 const [paginatedUsers, setpaginatedUsers] = useState();
 const [currentPage, setcurrentPage ] = useState(1);
 
@@ -17,6 +22,18 @@ useEffect(() => {
         setpaginatedUsers(_(res.data).slice(0).take(pageSize).value())
     });
     },[]);
+
+    const setLocalStorage = (id,first_name,last_name,email,phone,birthdate) => {
+        localStorage.setItem("id" , id);
+        localStorage.setItem("first_name" , first_name);
+        localStorage.setItem("last_name" , last_name);
+        localStorage.setItem("email" , email);
+        localStorage.setItem("phone" , phone);
+        localStorage.setItem("birthdate" , birthdate);
+
+
+    }
+
 
     const pageCount = users? Math.ceil(users.length/pageSize) :0;
     if(pageCount === 1) return null;
@@ -64,7 +81,11 @@ useEffect(() => {
                             <td>{user.id}</td>
                             <td>{user.first_name}</td>
                             <td>{user.last_name}</td>
-                            {/* <td><a href>View User detail</a></td> */}
+                            <td>
+                                    <Link to="/view">
+                                        <button className="btn btn-primary" onClick={()=>setLocalStorage(user.id, user.first_name,user.last_name,user.email,user.phone,user.birthdate)}>View User</button>
+                                    </Link>
+                             </td>
                         </tr>
                     ))
 }
