@@ -25,14 +25,15 @@ In the project directory, cd into server and you can run:
 
 Runs the app in the development mode.\
 Open [http://127.0.0.1:8000](http://127.0.0.1:8000) to view it in your browser.
- Dashboard Page:
-![image](https://user-images.githubusercontent.com/20389942/230645330-81360f6d-4c25-4c31-a1ce-bb39aeaa8f94.png) Users Page:
+#### Dashboard Page:
+![image](https://user-images.githubusercontent.com/20389942/230645330-81360f6d-4c25-4c31-a1ce-bb39aeaa8f94.png)
+#### Users Page:
  Displays users
  Should be paginated
  Filter users by any part of their full name
  Recently viewed button/link to quickly go back to the last viewed person
 ![image](https://user-images.githubusercontent.com/20389942/230645378-e26ffb07-c5f4-42f6-acdb-c094437b5984.png)
- User Profile Page:
+#### User Profile Page:
  Information from the user object provided by the API
  Formated dates so they are pretty and easy to read
  Displaying time remaining until the person&#39;s birthday.
