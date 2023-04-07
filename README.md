@@ -28,7 +28,7 @@ Open [http://127.0.0.1:8000](http://127.0.0.1:8000) to view it in your browser.
 #### Dashboard Page:
 ![image](https://user-images.githubusercontent.com/20389942/230645330-81360f6d-4c25-4c31-a1ce-bb39aeaa8f94.png)
 #### Users Page:
-###### Displays users
+#### Displays users
 #### Should be paginated
 #### Filter users by any part of their full name
 #### Recently viewed button/link to quickly go back to the last viewed person
