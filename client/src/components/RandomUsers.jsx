@@ -57,7 +57,7 @@ useEffect(() => {
             <input type="text"
             placeholder="Search User.." 
             className="form-control"
-            style={{ width:"40%", }}
+            style={{ width:"60%", marginTop:"20px"}}
             onChange={(e)=>{
                 setsearchTerm(e.target.value);
             }}
@@ -65,7 +65,7 @@ useEffect(() => {
             </div>
             <div className="col-md-6">
       <nav className="d-flex justify-content-center">
-        <div style={{ marginBottom: 20 }}>
+        <div style={{ marginBottom: 40,marginTop:"20px" }}>
           <p>
             <h8 style={{color:"#FFFFFF"}}>
               <b>Recently Viewed:  </b>
@@ -139,7 +139,7 @@ useEffect(() => {
   <div className="row">
     
     <div className="col-md-6">
-      <ul className="pagination justify-content-end">
+      <ul className="pagination justify-content-right">
         {pages.map((page) => (
           <li
             className={page === currentPage ? "page-item active" : "page-item"}
