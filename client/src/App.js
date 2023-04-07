@@ -9,6 +9,8 @@ function App() {
     <Routes>
       <Route path="/" element={<RandomUser />}></Route>
       <Route path="/view" element={<UserDetail/>}></Route>
+      <Route path="/view/:id" component={UserDetail} />
+
     </Routes>
     </BrowserRouter>
    

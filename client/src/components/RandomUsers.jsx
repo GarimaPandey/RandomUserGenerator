@@ -23,6 +23,8 @@ useEffect(() => {
     });
     },[]);
 
+   
+
     const setLocalStorage = (id,first_name,last_name,email,phone,birthdate) => {
         localStorage.setItem("id" , id);
         localStorage.setItem("first_name" , first_name);
@@ -30,7 +32,6 @@ useEffect(() => {
         localStorage.setItem("email" , email);
         localStorage.setItem("phone" , phone);
         localStorage.setItem("birthdate" , birthdate);
-
 
     }
 
@@ -44,8 +45,11 @@ useEffect(() => {
        const paginatedUser = _(users).slice(startIndex).take(pageSize).value();
        setpaginatedUsers(paginatedUser)
     }
-    return <div>{
-        !paginatedUsers ? ("No Data found"):(
+
+      
+    return <div>
+          
+        {!paginatedUsers ? ("No Data found"):(
             <div className="container">
             <input type="text"
             placeholder="Search.."
@@ -63,6 +67,7 @@ useEffect(() => {
                         <th>Last Name</th>
                         <th>View User</th>
                     </tr>
+                    
                 </thead>
                 <tbody>
                     {
@@ -85,14 +90,18 @@ useEffect(() => {
                                     <Link to="/view">
                                         <button className="btn btn-primary" onClick={()=>setLocalStorage(user.id, user.first_name,user.last_name,user.email,user.phone,user.birthdate)}>View User</button>
                                     </Link>
-                             </td>
+                             </td> 
                         </tr>
-                    ))
+                   ))
 }
                 </tbody>
             </table>
+            <h4>Recently Viewed User:</h4>
+            
             </div>
         )}
+
+        
         <nav className="d-flex justify-content-center">
             <ul className="pagination">
             {
