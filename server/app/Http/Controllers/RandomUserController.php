@@ -11,16 +11,21 @@ use App\Models\RandomUser;
 
 class RandomUserController extends Controller
 {
+    /**
+     * function to consume random users stored in DB
+     */
     function index()
-    {   $user = new RandomUser();
-        $users = $user->getUsers();
-        // $response = [
-        //     'data' => $users->items(),
-        // ];
+    {   
+        try {
+            $user = new RandomUser();
+            $users = $user->getUsers();
+            return $users;
+        } catch (Exception $e) {
+            // Handle the exception here, e.g. log it or display an error message
+            echo 'An error occurred: ' . $e->getMessage();
+        }
+         }
     
-        return $users;
-    }
-    
-
+  
 }
 
