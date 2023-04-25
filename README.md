@@ -14,9 +14,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 ## Set up
 
 In the project directory, cd into server and you can run:
-### `php artisan db:seed`
 
 ### `php artisan migrate`
+
+### `php artisan db:seed`
 
 ### `php artisan serve`
 
