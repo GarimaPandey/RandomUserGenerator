@@ -10,15 +10,19 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## Backend
-
+Set up a LAMP stack using MAMP or Docker
 ## Set up
 
 In the project directory, cd into server and you can run:
 
+Migrate the database using this command:
 ### `php artisan migrate`
 
+Once the DB is sucessfully migrated run the seed command to seed the database with the data coming from the API 
 ### `php artisan db:seed`
 
+
+serve the website on your local server using the following command
 ### `php artisan serve`
 
 Runs the app in the development mode.\
