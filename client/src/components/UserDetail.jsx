@@ -48,12 +48,12 @@ export default function UserDetail() {
     <div className="d-flex align-items-center justify-content-center vh-100">
       <div className="container">
         <div className="card my-4">
-          <div className="card-header text-center" style={{background: "#FFFFFF"}}>
+          <div className="card-header text-center" style={{ background: "#FFFFFF" }}>
             <h2 className="card-title"><b>User Detail</b></h2>
           </div>
           <div className="card-body" style={{
-background: "linear-gradient(to bottom, #2c3e50, #9b59b6)",
-color: "#000"
+            background: "linear-gradient(to bottom, #2c3e50, #9b59b6)",
+            color: "#000"
           }}>
             <div className="row">
               <div className="col-md-6">

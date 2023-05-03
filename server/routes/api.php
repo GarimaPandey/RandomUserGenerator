@@ -19,5 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/user', [RandomUserController::class,'index']);
-
+Route::get('/user', [RandomUserController::class, 'index']);

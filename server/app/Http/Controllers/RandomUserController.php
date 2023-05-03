@@ -15,7 +15,7 @@ class RandomUserController extends Controller
      * function to consume random users stored in DB
      */
     function index()
-    {   
+    {
         try {
             $user = new RandomUser();
             $users = $user->getUsers();
@@ -24,8 +24,7 @@ class RandomUserController extends Controller
             // Handle the exception here, e.g. log it or display an error message
             echo 'An error occurred: ' . $e->getMessage();
         }
-         }
-    
-  
-}
+    }
 
+
+}

@@ -12,7 +12,7 @@ class RandomUsersSeeder extends Seeder
     {
         $randomUser = new RandomUser();
         $count = $randomUser->count();
-        
+
         // Check if the database is empty
         if ($count === 0) {
             $response = Http::get('https://randomuser.me/api/?results=100');
@@ -26,7 +26,7 @@ class RandomUsersSeeder extends Seeder
                     'email' => $result['email'],
                     'phone' => $result['phone'],
                     'birthdate' => Carbon::parse($result['dob']['date'])->format('Y-m-d'),
-                    
+
                 ]);
 
 

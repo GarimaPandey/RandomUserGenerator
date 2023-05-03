@@ -25,7 +25,7 @@ class RandomUser extends Model
         $results = $response->json()['results'];
 
         foreach ($results as $result) {
-        
+
             self::create([
                 'first_name' => $result['name']['first'],
                 'last_name' => $result['name']['last'],
@@ -33,10 +33,11 @@ class RandomUser extends Model
                 'phone' => $result['phone'],
                 'birthdate' => Carbon::parse($user['dob']['date'])->format('Y-m-d'),
             ]);
-        }  
+        }
     }
 
-    public function getUsers(){
+    public function getUsers()
+    {
         $users = RandomUser::all();
         return $users;
     }
